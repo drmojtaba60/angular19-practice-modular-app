@@ -1,12 +1,12 @@
+// home.component.ts
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import {RouterOutlet} from '@angular/router';
 
 @Component({
+  standalone: true,
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.less'
+  template:'<router-outlet></router-outlet>',
+  imports: [CommonModule, RouterOutlet]
 })
-export class AppComponent {
-  title = 'angular19-modular';
-}
+export class AppComponent {}
