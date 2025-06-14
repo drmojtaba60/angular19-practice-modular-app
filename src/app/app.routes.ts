@@ -8,8 +8,9 @@ export const routes: Routes = [
   },
   {
     path: 'tasks',
-    loadChildren: () =>
-      import('./features/task-manager/task-manager.routes').then(m => m.TASK_MANAGER_ROUTES)
+    /*loadChildren: () =>
+      import('./features/task-manager/task-manager.routes').then(m => m.TASK_MANAGER_ROUTES)*/
+    loadChildren: () =>import('./features/task-manager/task-manager.module').then(m=>m.UserManagerModule)
   },
   // سایر مسیرها...
 ];
