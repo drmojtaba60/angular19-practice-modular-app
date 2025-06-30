@@ -33,7 +33,7 @@ import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
 })
 export class TaskListComponent {
   private taskService = inject(TaskService);
-  tasks = this.taskService.getTasks();
+  tasks = this.taskService.getTasks()??[];
   taskTitle = new FormControl('');
 
   addTask() {
