@@ -11,9 +11,14 @@ export const USER_ROUTES: Routes = [
         loadComponent: () => import('./pages/user-list.component').then(m => m.UserListComponent)
       },
       {
+        path: 'new-users',
+        loadComponent: () => import('./pages/users/user.component').then(m => m.UsersComponent)
+      },
+      {
         path: ':id',
         loadComponent: () => import('./pages/user-details.component').then(m => m.UserDetailsComponent)
-      }
+      },
+
     ]
   }
 ];

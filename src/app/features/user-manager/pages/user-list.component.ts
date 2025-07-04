@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {AutoSizeTextareaDirective, ButtonComponent, CapitalizePipe} from '../../../shared';
 import {FormsModule} from '@angular/forms';
+import {AutoSizeTextareaDirective, ButtonComponent, CapitalizePipe} from '@app/shared';
+import {formatDate} from '@app/utils';
+import {StorageTool} from '@app/tools';
 
 @Component({
   standalone: true,
   selector: 'app-user-list',
-  imports: [RouterModule, ButtonComponent, ButtonComponent, CapitalizePipe, AutoSizeTextareaDirective, FormsModule],
+  imports: [RouterModule, ButtonComponent, ButtonComponent, CapitalizePipe, AutoSizeTextareaDirective, FormsModule, CapitalizePipe, CapitalizePipe, AutoSizeTextareaDirective],
   template: `
     <h3>📃 User List</h3>
     <h4>{{developerName??''| capitalize}}</h4>
@@ -23,9 +25,15 @@ import {FormsModule} from '@angular/forms';
       <li><a routerLink="1">User 1</a></li>
       <li><a routerLink="2">User 2</a></li>
     </ul>
+
+    <div>
+
+    </div>
   `
 })
 export class UserListComponent {
   developerName?: string='mojtaba.shaghi';
   text: string='test textarea';
+  date=formatDate(new Date());
+  storageI=StorageTool.get("storageI");
 }
